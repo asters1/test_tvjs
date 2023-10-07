@@ -1,12 +1,12 @@
 import {} from './wrapper/index.js'
-import { __jsEvalReturn } from './kkys_open.js'
+import { __jsEvalReturn } from './kunyu77_open.js'
 //=============================================
 let siteKey = 'siteKey'
 //外部字符串
 let extend = ''
 //筛选开关
 let filter_switch = false
-首页推荐开关
+//首页推荐开关
 let home_switch = false
 //搜索开关
 let search_switch = false
@@ -14,7 +14,7 @@ let search_switch = false
 //搜索关键字
 let search_keyword = '斗罗大陆'
 //测试的类型的下标,从0开始(电影,电视剧...)
-Let test_type_index = 1
+let test_type_index = 1
 //测试category的页数
 let test_category_page = 1
 //测试的视频下标，从0开始
