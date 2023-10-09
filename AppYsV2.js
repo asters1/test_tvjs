@@ -488,7 +488,11 @@ async function play(flag, id, vipFlags) {
           )
         )
 
-        return JSON.stringify({ parse: 0, url: re_json['url'] })
+        return JSON.stringify({
+          parse: 0,
+          header: { 'User-Agent': 'okhttp/4.1.0' },
+          url: re_json['url'],
+        })
       }
     }
 
@@ -583,7 +587,7 @@ async function getFinalVideo(flag, parseUrls, url) {
       continue
     }
     const playUrl = parseUrl + url
-    const content = await request(playUrl, null, 10000) // 10秒请求，能更好过滤webjx
+    const content = await request(playUrl, null, 10000) // 10秒���求，能更好过滤webjx
     let tryJson = null
     try {
       tryJson = jsonParse(url, content)
