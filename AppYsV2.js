@@ -399,11 +399,6 @@ function genPlayList(URL, object, json, vod, vid) {
     vod.vod_actor = data.vod_actor || ''
     vod.vod_director = data.vod_director || ''
     vod.vod_content = data.vod_content || ''
-    printLog(
-      'post',
-      'test',
-      JSON.stringify(data.vod_play_list[1].player_info.parse2)
-    )
     // printLog('post', 'test', 'ggg')
 
     const vodUrlWithPlayer = data.vod_play_list
@@ -487,7 +482,7 @@ async function play(flag, id, vipFlags) {
       if (siteFormPasre[flag][i] != '') {
         siteFormPasre[flag][i] = siteFormPasre[flag][i].replace(/\.\./g, '.')
 
-        return JSON.stringify({ parses: 0, url: siteFormPasre[flag][i] + id })
+        return JSON.stringify({ parse: 0, url: siteFormPasre[flag][i] + id })
       }
     }
 
@@ -525,6 +520,7 @@ async function play(flag, id, vipFlags) {
     }
   } catch (e) {
     // Handle any error here
+    printLog('get', 'err', e)
   }
   return ''
 }
