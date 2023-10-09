@@ -1,9 +1,10 @@
 import {} from './wrapper/index.js'
-import { __jsEvalReturn } from './kunyu77_open.js'
+import { __jsEvalReturn } from './AppYsV2.js'
+// import { __jsEvalReturn } from './appysv2.js'
 //=============================================
 let siteKey = 'siteKey'
 //外部字符串
-let extend = ''
+let extend = 'http://ys.qtw.asia/lvdou_api.php/v1.vod'
 //筛选开关
 let filter_switch = false
 //首页推荐开关
@@ -18,7 +19,7 @@ let test_type_index = 1
 //测试category的页数
 let test_category_page = 1
 //测试的视频下标，从0开始
-let test_vod_index = 5
+let test_vod_index = 1
 //测试视频源的下标
 let test_vod_from_index = 0
 //
@@ -218,7 +219,11 @@ async function test() {
       test_play_id
   )
   try {
-    var resPlay = await spider.play('', test_play_id + '')
+    var resPlay = await spider.play(
+      url_from[test_vod_from_index],
+      test_play_id + '',
+      JSON.parse('[]')
+    )
   } catch {
     console.log('play函数运行出错,正在退出...')
     return
