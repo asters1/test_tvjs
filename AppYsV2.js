@@ -481,8 +481,14 @@ async function play(flag, id, vipFlags) {
     for (let i = 0; i < siteFormPasre[flag].length; i++) {
       if (siteFormPasre[flag][i] != '') {
         siteFormPasre[flag][i] = siteFormPasre[flag][i].replace(/\.\./g, '.')
+        let re_json = JSON.parse(
+          await request(
+            siteFormPasre[flag][i] + id,
+            getHeaders(siteFormPasre[flag][i] + id)
+          )
+        )
 
-        return JSON.stringify({ parse: 0, url: siteFormPasre[flag][i] + id })
+        return JSON.stringify({ parse: 0, url: re_json['url'] })
       }
     }
 

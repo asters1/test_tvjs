@@ -19,7 +19,7 @@ let test_type_index = 1
 //测试category的页数
 let test_category_page = 1
 //测试的视频下标，从0开始
-let test_vod_index = 1
+let test_vod_index = 0
 //测试视频源的下标
 let test_vod_from_index = 0
 //
